@@ -9,14 +9,17 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://code.highcharts.com/stock/highstock.js"></script>
     <script src="https://code.highcharts.com/stock/indicators/indicators.js"></script>
-    <link rel="stylesheet" type="text/css" href="../static/css/index.css">
+    <link rel="stylesheet" href="{{ url_for('static',filename='index.css') }}">
+
+    
+  
     <script src="../static/js/index.js"></script>
 </head>
 
 <body>
 
     <div id=header>
-        <img src="../static/images/apple.png" alt="apple.png">
+        <img src="../static/images/Graph.gif" alt="Graph.gif">
         <h1>Stock Price Prediction</h1>
     </div>
 
@@ -29,6 +32,8 @@
     </marquee>
 
     <div id="chart"></div>
+
+    <div>{{time}}</div>
 
     <div id="sensorDiv1">
         <h1 class="sensor1">Sensor</h1>

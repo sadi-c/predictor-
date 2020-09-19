@@ -5,13 +5,16 @@ import createBucket
 
 client = boto3.client("s3")
 path = f"s3://{createBucket.bucket}/{uploadFile.filename}"
-
+bucketname = "lmtd-team-beta"
 
 def fetcher():
     try:
-        data = pd.read_csv(path)
-        print(data.head())
-        return data
+
+        with open('APPL.csv', 'wb') as f:
+            s3.download_fileobj(bucketname, "APPL.csv", f)
+
+
+        
 
     except Exception:
         return print("Error! Unable to fetch the file!")

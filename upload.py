@@ -1,16 +1,30 @@
 import boto3
-import createBucket
+#import createBucket
 
-s3 = boto3.client('s3')
-filename = 'AAPL.csv'
+#s3 = boto3.resource('s3')
+aws_session = boto3.Session()
+s3_client = aws_session.client('s3')
+
+bucket_name= "lmtd-team-beta"
+#mybucket = s3.Bucket('lmtd-team-beta')
+#filename = 'AAPL.csv'
 
 
-def uploader():
+def uploader(filename):
+    print(type(filename))
     try:
-        s3.upload_file(filename, createBucket.bucket, filename)
-        print(f'{filename} uploaded successfully!')
-    except:
-        print(f"{filename} already exists on bucket {createBucket.bucket}!")
+        s3_client.upload_file(filename, bucket_name, filename)
+
+        
+    except Exception as e:
+        #print(f"{filename} already exists ")
+        print(e)
+    else:
+        print("File uploaded.")
 
 
-uploader()
+
+
+
+#uploader("APPL.csv")
+#check()

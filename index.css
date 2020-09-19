@@ -1,7 +1,7 @@
 #header{
     text-align: center;
     font-family: Helvetica;
-    color: red;
+    color: rgb(16, 216, 106);
     font-size: 120%;
 }
 
@@ -12,8 +12,8 @@
 
 #sensorDiv1{
     font-family: Helvetica;
-    color: white;
-    background-color: #ff0000;
+    color: rgb(226, 225, 235);
+    background-color: #0059ff;
     width: 50%;
     float: left;
     margin: auto;
